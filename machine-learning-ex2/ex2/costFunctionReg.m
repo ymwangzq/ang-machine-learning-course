@@ -19,6 +19,7 @@ grad = zeros(size(theta));
 
 
 theta1 = [0; theta(2:end)];
+% theta1 = theta; You should not regularize theta(1).
 
 J = (-y'*log(sigmoid(X*theta)) - (1 - y)'*log(1-sigmoid(X*theta))) / m ...
     + lambda * theta1' * theta1 / (2 * m);
